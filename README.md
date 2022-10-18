@@ -1,7 +1,7 @@
 
 # printf
 
-A simple printf function carried out by Monday Ofem and Ekene Clarence for ALX Software Engineering School.
+A simple printf function carried out by Salmanu Usman and Ejiro Tokwede for ALX Software Engineering School.
 
 # Welcome
 
@@ -235,7 +235,7 @@ Function That Returns The Amount Of Indetifiers.
 
 # Authors
 
-* [Monday Ofem] (https://github.com/Monday6984) 
-* [Ekene Clarence] (https://github.com/3k3n3)
+* [Salmanu Usmman] (https://github.com/falconbolt) 
+* [Ejiro Tokwede] (https://github.com/ejiro97)
 
 # End
