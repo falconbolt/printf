@@ -1,34 +1,48 @@
-#include "holberton.h"
-
+#include "main.h"
 /**
- * printf_bin - prints a binary number.
- * @val: arguments.
- * Return: 1.
- */
-int printf_bin(va_list val)
+* print_dec - function that prints an decimal
+* @d: integer to print
+* Descriptions: prints digit with _putchar
+* Return: size the output text
+*/
+int print_dec(va_list d)
 {
-	int flag = 0;
-	int cont = 0;
-	int i, a = 1, b;
-	unsigned int num = va_arg(val, unsigned int);
-	unsigned int p;
+	int len, powten, j, digit, n, count = 0, num;
 
-	for (i = 0; i < 32; i++)
+	n = va_arg(d, int);
+	if (n != 0)
 	{
-		p = ((a << (31 - i)) & num);
-		if (p >> (31 - i))
-			flag = 1;
-		if (flag)
+		if (n < 0)
 		{
-			b = p >> (31 - i);
-			_putchar(b + 48);
-			cont++;
+			_putchar('-');
+			count++;
+		}
+		num = n;
+		len = 0;
+		while (num != 0)
+		{
+			num /= 10;
+			len++;
+		}
+		powten = 1;
+		for (j = 1; j <= len - 1; j++)
+			powten *= 10;
+		for (j = 1; j <= len; j++)
+		{
+			digit = n / powten;
+			if (n < 0)
+				_putchar((digit * -1) + 48);
+			else
+				_putchar(digit + '0');
+			count++;
+			n -= digit * powten;
+			powten /= 10;
 		}
 	}
-	if (cont == 0)
+	else
 	{
-		cont++;
 		_putchar('0');
+		return (1);
 	}
-	return (cont);
+	return (count);
 }
